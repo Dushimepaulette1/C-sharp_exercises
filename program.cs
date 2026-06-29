@@ -2,4 +2,5 @@
 // GettingInput.Run();
 // Variables.VariablesRun();
 // ConvertDataTypes.ConvertDataTypesRun();
-exercise.exerciseRun();
+// exercise.exerciseRun();
+ArithmeticOperations.ArithmeticOperationsRun();
