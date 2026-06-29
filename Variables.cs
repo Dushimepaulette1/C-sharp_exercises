@@ -14,11 +14,23 @@ public class Variables
 // Next, create a variable that can be either true or false. Name the variable spayed and set it to true. 
         bool spayed = true;
 // Use Console.WriteLine() to print each variable to the console. 
-        Console.WriteLine($"{name}");
-        Console.WriteLine($"{breed}");
-        Console.WriteLine($"{age}");
-        Console.WriteLine($"{weight}");
-        Console.WriteLine($"{spayed}");
+        // Console.WriteLine($"{name}");
+        // Console.WriteLine($"{breed}");
+        // Console.WriteLine($"{age}");
+        // Console.WriteLine($"{weight}");
+        // Console.WriteLine($"{spayed}");
+        // Using the var keyword, declare a string variable food and initialize it with the value “apple”.
+        var food = "apple";
+        // Using the var keyword, declare a int variable calories and initialize it with the value 95.
+        var calories = 95;
+        // Using the var keyword, declare a bool variable isFruit and initialize it with the value true.
+        var isFruit = true;
+        // Now let’s print the values of food, calories and isFruit to the console.
+        Console.WriteLine($"{food}");
+        Console.WriteLine($"{calories}");
+        Console.WriteLine($"{isFruit}");
     }
+    
 }
+
 
