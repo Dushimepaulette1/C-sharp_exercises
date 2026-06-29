@@ -1,3 +1,4 @@
-﻿// Console.WriteLine("Hello, World!");
+﻿Console.WriteLine("Hello, World!");
 // GettingInput.Run();
-Variables.VariablesRun();
+// Variables.VariablesRun();
+ConvertDataTypes.ConvertDataTypesRun();
