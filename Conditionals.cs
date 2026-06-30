@@ -27,27 +27,30 @@ public class Conditionals
         // {
         //     Console.WriteLine("Neutral");
         // }
-        switch (ph)
-        {
-            case <= 3:
-                Console.WriteLine("Very Acidic");
-                break;
-
-            case < 7:
-                Console.WriteLine("Acidic");
-                break;
-
-            case >= 11:
-                Console.WriteLine("Very Basic");
-                break;
-
-            case > 7:
-                Console.WriteLine("Basic");
-                break;
-
-            default:
-                Console.WriteLine("Neutral");
-                break;
-        }
+        // switch (ph)
+        // {
+        //     case <= 3:
+        //         Console.WriteLine("Very Acidic");
+        //         break;
+        //
+        //     case < 7:
+        //         Console.WriteLine("Acidic");
+        //         break;
+        //
+        //     case >= 11:
+        //         Console.WriteLine("Very Basic");
+        //         break;
+        //
+        //     case > 7:
+        //         Console.WriteLine("Basic");
+        //         break;
+        //
+        //     default:
+        //         Console.WriteLine("Neutral");
+        //         break;
+        // }
+        int pepperLength = 4;
+        string message = (pepperLength >= 3.5) ? "ready!" : "wait a little longer";
+        Console.WriteLine(message);
     }
 }
