@@ -17,9 +17,20 @@ public class Strings
 
 
         // Print variable and newline
-        Console.WriteLine(firstSentence);
-        Console.WriteLine();
-        Console.WriteLine(firstSpeech);
+        // Console.WriteLine(firstSentence);
+        // Console.WriteLine();
+        // Console.WriteLine(firstSpeech);
+        
+        // Declare the variables
+        string beginning = "The guy next door ";
+        string middle = "wanted to give me some food ";
+        string end = "and i went to take the food on his poarch.";
+
+        // Concatenate the string and the variables
+        string story = beginning + middle + end;
+
+        // Print the story to the console 
+        Console.WriteLine(story);
 
     }
 }
