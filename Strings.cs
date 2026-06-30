@@ -32,8 +32,21 @@ public class Strings
         string storyInterpolation = $"{beginning} {middle} {end}";
 
         // Print the story to the console 
-        Console.WriteLine(story);
-        Console.WriteLine(storyInterpolation);
+        // Console.WriteLine(story);
+        // Console.WriteLine(storyInterpolation);
+        
+        // Create password
+        string password = "a92301j2add";
+
+        // Get password length
+        int passwordLength = password.Length;
+
+
+        // Check if password uses symbol
+        int passwordCheck = password.IndexOf("!");
+
+        // Print results
+        Console.WriteLine($"The user password is {password}. Its length is {passwordLength} and it receives a {passwordCheck} check.");
 
     }
 }
