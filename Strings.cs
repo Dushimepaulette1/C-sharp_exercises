@@ -28,9 +28,12 @@ public class Strings
 
         // Concatenate the string and the variables
         string story = beginning + middle + end;
+        // Interpolate the string and the variables
+        string storyInterpolation = $"{beginning} {middle} {end}";
 
         // Print the story to the console 
         Console.WriteLine(story);
+        Console.WriteLine(storyInterpolation);
 
     }
 }
