@@ -4,4 +4,5 @@
 // ConvertDataTypes.ConvertDataTypesRun();
 // exercise.exerciseRun();
 // ArithmeticOperations.ArithmeticOperationsRun();
-Strings.StringsRun();
+// Strings.StringsRun();
+Conditionals.ConditionalsRun();

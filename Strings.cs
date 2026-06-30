@@ -76,8 +76,8 @@ public class Strings
 
         // Get camera directions
         int charPosition = script.IndexOf("Close");
-        int length = "Close on".Length;
-        string cameraDirections = script.Substring(charPosition, length);
+        int length2 = "Close on".Length;
+        string cameraDirections = script.Substring(charPosition, length2);
 
         // Get scene description
         charPosition = script.IndexOf("a portrait");
