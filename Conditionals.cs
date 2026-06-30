@@ -13,19 +13,41 @@ public class Conditionals
         // }
         
         //using the ph example to show how else if conditionals work
-        
-        double ph = 7;
-        if(ph < 7)
+        //
+        double ph = 4.5;
+        // if(ph < 7)
+        // {
+        //     Console.WriteLine("Acidic");
+        // }
+        // else if(ph > 7)
+        // {
+        //     Console.WriteLine("Basic");
+        // }
+        // else
+        // {
+        //     Console.WriteLine("Neutral");
+        // }
+        switch (ph)
         {
-            Console.WriteLine("Acidic");
-        }
-        else if(ph > 7)
-        {
-            Console.WriteLine("Basic");
-        }
-        else
-        {
-            Console.WriteLine("Neutral");
+            case <= 3:
+                Console.WriteLine("Very Acidic");
+                break;
+
+            case < 7:
+                Console.WriteLine("Acidic");
+                break;
+
+            case >= 11:
+                Console.WriteLine("Very Basic");
+                break;
+
+            case > 7:
+                Console.WriteLine("Basic");
+                break;
+
+            default:
+                Console.WriteLine("Neutral");
+                break;
         }
     }
 }
