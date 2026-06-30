@@ -19,6 +19,12 @@ public class Array
 
 // Won't compile - cannot create empty implicitly typed array
 // var empty = new[] { };
+// plantHeights will be equal to [0, 0, 0]
+        int[] plantHeights = new int[3]; 
+
+// plantHeights will now be [0, 0, 8]
+        plantHeights[2] = 8; 
+
 
     }
 }
