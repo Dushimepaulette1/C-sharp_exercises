@@ -47,6 +47,29 @@ public class Strings
 
         // Print results
         Console.WriteLine($"The user password is {password}. Its length is {passwordLength} and it receives a {passwordCheck} check.");
+        
+        
+        //Manipulating strings
+        // dna strand
+        string startStrand = "ATGCGATGAGCTTAC";
+
+        // find location of "tga"
+        int tga = startStrand.IndexOf("TGA");
+
+        // start point and stop point variables
+        int startPoint = 0;
+        int length = tga + 3;
+
+
+
+        // define final strand
+        string dna = startStrand.Substring(startPoint, length);
+        Console.WriteLine(dna);
+
+        // DNA mutation search
+        Console.WriteLine(dna[3]);
+
+
 
     }
 }
