@@ -1,6 +1,7 @@
-public class Array
+
+public class Arrays
 {
-    public static void ArrayRun()
+    public static void ArraysRun()
     {
         string[] summerStrut;
         summerStrut = new string[] {"Juice", "Missing U", "Raspberry Beret", "New York Groove", "Make me feel", "Rebel Rebel", "Despacito", "Los Angeles"};
@@ -24,7 +25,10 @@ public class Array
 
 // plantHeights will now be [0, 0, 8]
         plantHeights[2] = 8; 
+        int[] plantHeights2 = { 3, 6, 4, 1 };
 
+// plantHeights will be { 1, 3, 4, 6 }
+        Array.Sort(plantHeights2); 
 
     }
 }

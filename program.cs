@@ -6,4 +6,6 @@
 // // ArithmeticOperations.ArithmeticOperationsRun();
 // // Strings.StringsRun();
 // Conditionals.ConditionalsRun();
-Array.ArrayRun();
+// Arrays.ArraysRun();
+
+Loops.LoopsRun();
