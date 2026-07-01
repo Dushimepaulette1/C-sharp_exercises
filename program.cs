@@ -9,4 +9,5 @@
 // Arrays.ArraysRun();
 
 // Loops.LoopsRun();
-Lists.ListsRun();
+// Lists.ListsRun();
+Methods.MethodsRun();
