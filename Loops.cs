@@ -22,5 +22,22 @@ public class Loops
         {
             Console.WriteLine($"[] {task}"); 
         }
+        
+        // while loops are good when you know your stopping condition, but not how many times the loop will need to run.
+        // do...while loops are only necessary if you definitely want something to run once, but then stop if a condition is met.
+        // for loops are best if you want something to run a specific number of times, rather than given a certain condition.
+        // foreach loops are the best way to loop over an array, or any other collection.
+        
+        //JUMP STATEMENTS
+        bool buttonClick = false;
+        int time = 0;
+        do
+        {
+            Console.WriteLine("BLARRRRR");
+            time++;
+            if(time == 3){
+                break;
+            }
+        } while(!buttonClick);
     }
 }
