@@ -11,6 +11,10 @@ public class Lists
         marathons.Add(144.07);
         marathons.Add(143.12);
         Console.WriteLine(marathons[1]);
+        
+        //containing and couting in lists
+        Console.WriteLine(marathons2.Contains(143.23));
+        Console.WriteLine(marathons2.Count);
 
     }
 }
