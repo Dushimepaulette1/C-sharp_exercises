@@ -8,4 +8,5 @@
 // Conditionals.ConditionalsRun();
 // Arrays.ArraysRun();
 
-Loops.LoopsRun();
+// Loops.LoopsRun();
+Lists.ListsRun();
