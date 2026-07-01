@@ -20,6 +20,9 @@ public class Lists
         bool removed = marathons2.Remove(143.12);
         Console.WriteLine(marathons2[1]);
         Console.WriteLine(removed);
+        
+        //Removing everything in the list
+        marathons2.clear();
 
 
     }
