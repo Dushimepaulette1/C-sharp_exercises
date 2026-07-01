@@ -10,4 +10,5 @@
 
 // Loops.LoopsRun();
 // Lists.ListsRun();
-Methods.MethodsRun();
+// Methods.MethodsRun();
+OutParameters.OutParametersRun();
