@@ -10,12 +10,17 @@ public class Loops
         // } while (!buttonClick);
         // //This line shows that this will run after the loop finishes
         // Console.WriteLine("Time for a five minute break.");
-        for (int i = 1; i <= 16; i++)
+        // for (int i = 1; i <= 16; i++)
+        // {
+        //     Console.WriteLine($"Week {i}");
+        //     Console.WriteLine("Announcements: \n \n \n ");
+        //     Console.WriteLine("Report Backs: \n \n \n");
+        //     Console.WriteLine("Discussion Items: \n \n \n");
+        // }
+        string[] todo = {"respond to email", "make wireframe", "program feature", "fix bugs"};
+        foreach(string task in todo)
         {
-            Console.WriteLine($"Week {i}");
-            Console.WriteLine("Announcements: \n \n \n ");
-            Console.WriteLine("Report Backs: \n \n \n");
-            Console.WriteLine("Discussion Items: \n \n \n");
+            Console.WriteLine($"[] {task}"); 
         }
     }
 }
