@@ -22,7 +22,7 @@ public class Lists
         Console.WriteLine(removed);
         
         //Removing everything in the list
-        marathons2.clear();
+        marathons2.Clear();
 
 
     }
