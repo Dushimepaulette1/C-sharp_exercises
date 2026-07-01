@@ -15,6 +15,12 @@ public class Lists
         //containing and couting in lists
         Console.WriteLine(marathons2.Contains(143.23));
         Console.WriteLine(marathons2.Count);
+        
+        //Removing an item from a list
+        bool removed = marathons2.Remove(143.12);
+        Console.WriteLine(marathons2[1]);
+        Console.WriteLine(removed);
+
 
     }
 }
