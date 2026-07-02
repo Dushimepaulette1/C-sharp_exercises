@@ -2,8 +2,8 @@ public class Forest
 {
     public string name;
     public string biome;
-    public int trees;
-    public int age;
+    private int trees;
+    private int age;
 
     public int Grow()
     {
