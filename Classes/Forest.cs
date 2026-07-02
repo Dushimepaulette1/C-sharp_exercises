@@ -7,15 +7,21 @@ public class Forest
 
     public int Grow()
     {
-        trees += 30;
-        age++;
-        return trees;
+        this.trees += 30;
+        this.age++;
+        return this.trees;
     }
 
     public int Burn()
     {
-        trees -= 20;
-        age++;
-        return trees;
+        this.trees -= 20;
+        this.age++;
+        return this.trees;
+    }
+ public Forest(string name, string biome)
+    {
+      this.name = name;
+      this.biome = biome;
+      this.age = 1;
     }
 }

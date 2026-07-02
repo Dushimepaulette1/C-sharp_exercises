@@ -2,13 +2,10 @@ public class ForestDemo
 {
     public static void ForestRun()
     {
-        Forest f = new Forest();
-
-        f.name = "Cactus";
-        f.biome = "Desert";
+        Forest f = new Forest("Congo", "Tropical");
         f.trees = 3;
-        f.age = 23;
 
         Console.WriteLine(f.name);
+        Console.WriteLine(f.biome);
     }
 }
