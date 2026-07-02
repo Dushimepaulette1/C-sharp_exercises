@@ -4,6 +4,13 @@ public class Forest
     public string biome;
     private int trees;
     private int age;
+public int Age
+    {
+      get {return age;}
+//This means that we can't set the age outside the class but when we don't write it at all meaning 
+// "omitting the set" then we can't change it also in the class
+      private set {age = value;}
+    }
 
  public string Name
     {
