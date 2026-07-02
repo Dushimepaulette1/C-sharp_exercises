@@ -5,6 +5,26 @@ public class Forest
     private int trees;
     private int age;
 
+ public string Name
+    {
+      get { return name; }
+      set { name = value;}
+    }
+     public string Biome
+    {
+      get { return biome; }
+      set 
+      {
+        if(value != "Tropical" && value != "Temperate" && value != "Boreal")
+        {
+          biome = "Unknown";
+        }
+        else
+        {
+          biome = value;
+        }
+}
+}
     public int Grow()
     {
         this.trees += 30;
