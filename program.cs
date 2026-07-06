@@ -1,16 +1,28 @@
-﻿// // Console.WriteLine("Hello, World!");
-// // GettingInput.Run();
-// // Variables.VariablesRun();
-// // ConvertDataTypes.ConvertDataTypesRun();
-// // exercise.exerciseRun();
-// // ArithmeticOperations.ArithmeticOperationsRun();
-// // Strings.StringsRun();
-// Conditionals.ConditionalsRun();
-// Arrays.ArraysRun();
+// Each exercise lives in its own class under a topic folder (Basics/, Collections/, Loops/,
+// Methods/, Classes/, Inheritance/). Uncomment the line for the exercise you want to run.
 
-// Loops.LoopsRun();
+// --- Basics ---
+// GettingInput.Run();
+// Variables.VariablesRun();
+// ConvertDataTypes.ConvertDataTypesRun();
+// ConversionExercise.Run();
+// ArithmeticOperations.ArithmeticOperationsRun();
+// Strings.StringsRun();
+// Conditionals.ConditionalsRun();
+
+// --- Collections ---
+// Arrays.ArraysRun();
 // Lists.ListsRun();
+
+// --- Loops ---
+// Loops.LoopsRun();
+
+// --- Methods ---
 // Methods.MethodsRun();
 // OutParameters.OutParametersRun();
 
-ForestDemo.ForestRun();
+// --- Classes ---
+// ForestDemo.ForestRun();
+
+// --- Inheritance ---
+InheritanceDemo.InheritanceRun();
