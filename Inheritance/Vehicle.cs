@@ -16,17 +16,19 @@
 // Add a constructor to Vehicle that takes make, model, and year as parameters
 // Add a constructor to Car that takes make, model, year, and numberOfDoors as parameters and uses base to call Vehicle's constructor
 
-// In your Main method:
 
-// Create a Car object using the constructor in one line
-// Print all its fields to confirm everything was set correctly
 public class Vehicle
 {
     public string Make;
     public string Model;
     public int Year;
 
- 
+    public Vehicle(string make, string model, int year)
+    {
+        this.Make = make;
+        this.Model = model;
+        this.Year = year;
+    }
 
     public void StartEngine()
     {
