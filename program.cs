@@ -1,6 +1,3 @@
-// Each exercise lives in its own class under a topic folder (Basics/, Collections/, Loops/,
-// Methods/, Classes/, Inheritance/). Uncomment the line for the exercise you want to run.
-
 // --- Basics ---
 // GettingInput.Run();
 // Variables.VariablesRun();
