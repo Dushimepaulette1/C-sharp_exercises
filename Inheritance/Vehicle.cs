@@ -17,8 +17,17 @@
 // Add a constructor to Car that takes make, model, year, and numberOfDoors as parameters and uses base to call Vehicle's constructor
 
 
+
+// Create a Motorcycle class that also inherits from Vehicle and overrides Describe() to return:
+
+// "I am a motorcycle made by [Make]"
+// In your Main method:
+
+// Create one Car and one Motorcycle using constructors
+// Call Describe() on both and print the results
 public class Vehicle
 {
+   
     public string Make;
     public string Model;
     public int Year;
@@ -34,5 +43,11 @@ public class Vehicle
     {
         Console.WriteLine("Vroom! Engine started.");
 
+    }
+     // Add a virtual method to Vehicle called Describe() that returns:
+// "I am a vehicle"
+    public virtual void Describe()
+    {
+        Console.WriteLine("I am a vehicle");
     }
 }
