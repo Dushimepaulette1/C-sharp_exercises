@@ -22,4 +22,5 @@
 // ForestDemo.ForestRun();
 
 // --- Inheritance ---
-InheritanceDemo.InheritanceRun();
+// InheritanceDemo.InheritanceRun();
+PolymorphismDemo.PolymorphismRun();
