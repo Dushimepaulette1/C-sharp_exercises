@@ -15,4 +15,8 @@ public class Manager: Employee {
     {
         Console.WriteLine("Manager Making request to the HR");
     }
+    public void MoveToOffice()
+    {
+      Console.WriteLine("Manager moves to office.");
+    }
 }
