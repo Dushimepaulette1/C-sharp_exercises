@@ -16,7 +16,7 @@ namespace LearnReferences
       chapterList = chapters;
     }
 
-    public Novel(int page = 0) : base()
+    public Novel(int page = 0, string author = "Unknown", string title = "Untitled") : base(author, title)
     {
       CurrentPage = page;
       chapterList = new List<string>();

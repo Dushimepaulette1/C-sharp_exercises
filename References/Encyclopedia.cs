@@ -5,7 +5,7 @@ namespace LearnReferences
     public int CurrentPage
     { get; set; }
     
-    public Encyclopedia(int page = 0) : base()
+    public Encyclopedia(int page = 0, string author = "Unknown", string title = "Untitled") : base(author, title)
     {
       CurrentPage = page;
     }
