@@ -13,6 +13,8 @@
     <Compile Remove="References/**/*.cs" />
     <Compile Remove="strings/**/*.cs" />
     <Compile Remove="Enums/**/*.cs" />
+    <Compile Remove="Generics/**/*.cs" />
+    <Compile Remove="Exceptions/**/*.cs" />
   </ItemGroup>
 
 </Project>
