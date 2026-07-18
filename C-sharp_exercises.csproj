@@ -10,6 +10,9 @@
 
   <ItemGroup>
     <Compile Remove="Interfaces/**/*.cs" />
+    <Compile Remove="References/**/*.cs" />
+    <Compile Remove="strings/**/*.cs" />
+    <Compile Remove="Enums/**/*.cs" />
   </ItemGroup>
 
 </Project>
