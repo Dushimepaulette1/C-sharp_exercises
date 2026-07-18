@@ -17,6 +17,7 @@
     <Compile Remove="Exceptions/**/*.cs" />
     <Compile Remove="NullableTypes/**/*.cs" />
     <Compile Remove="Lambdas/**/*.cs" />
+    <Compile Remove="LINQ/**/*.cs" />
   </ItemGroup>
 
 </Project>
