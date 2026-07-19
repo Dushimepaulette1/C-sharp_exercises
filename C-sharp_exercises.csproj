@@ -18,6 +18,7 @@
     <Compile Remove="NullableTypes/**/*.cs" />
     <Compile Remove="Lambdas/**/*.cs" />
     <Compile Remove="LINQ/**/*.cs" />
+    <Compile Remove="Delegates/**/*.cs" />
   </ItemGroup>
 
 </Project>
