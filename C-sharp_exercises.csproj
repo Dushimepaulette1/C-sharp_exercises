@@ -19,6 +19,7 @@
     <Compile Remove="Lambdas/**/*.cs" />
     <Compile Remove="LINQ/**/*.cs" />
     <Compile Remove="Delegates/**/*.cs" />
+    <Compile Remove="Events/**/*.cs" />
   </ItemGroup>
 
 </Project>
