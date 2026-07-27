@@ -1,0 +1,6 @@
+@CorporateTraining.API_HostAddress = http://localhost:5207
+
+GET {{CorporateTraining.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
