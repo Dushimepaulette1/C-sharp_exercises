@@ -1,28 +1,14 @@
-import { useEffect, useState } from "react";
-import type { TrainingCourse } from "./types/TrainingCourse";
-import { getCourses } from "./services/courseService";
+import { Navigate, Route, Routes } from "react-router-dom";
+import CoursesPage from "./pages/CoursesPage";
+import CourseDetailPage from "./pages/CourseDetailPage";
 
 function App() {
-  const [courses, setCourses] = useState<TrainingCourse[]>([]);
-
-  useEffect(() => {
-    getCourses().then((data) => {
-      setCourses(data);
-    });
-  }, []);
-
   return (
-    <div>
-      <h1>Corporate Training System</h1>
-
-      {courses.map((course) => (
-        <div key={course.id}>
-          <h2>{course.title}</h2>
-          <p>{course.description}</p>
-          <p>Instructor: {course.instructor}</p>
-        </div>
-      ))}
-    </div>
+    <Routes>
+      <Route path="/" element={<Navigate to="/courses" replace />} />
+      <Route path="/courses" element={<CoursesPage />} />
+      <Route path="/courses/:id" element={<CourseDetailPage />} />
+    </Routes>
   );
 }
 
