@@ -4,3 +4,10 @@ obj/
 .vs/
 *.user
 *.suo
+# React
+node_modules/
+dist/
+
+# Environment variables
+.env
+.env.*
