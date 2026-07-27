@@ -20,6 +20,10 @@
     <Compile Remove="LINQ/**/*.cs" />
     <Compile Remove="Delegates/**/*.cs" />
     <Compile Remove="Events/**/*.cs" />
+    <Compile Remove="Asynchronous/**/*.cs" />
+    <Compile Remove="Files/**/*.cs" />
+    <Compile Remove="iterators/**/*.cs" />
+    <Compile Remove="ImposterGame/**/*.cs" />
   </ItemGroup>
 
 </Project>

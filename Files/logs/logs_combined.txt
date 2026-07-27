@@ -1,0 +1,13 @@
+20260719_212827_0 [WARN] Test message number 2
+20260719_212827_0 [ERROR] Test message number 3
+20260719_212827_0 [WARN] Test message number 10
+20260719_212827_0 [WARN] Test message number 8
+20260719_212827_0 [ERROR] Test message number 9
+20260719_212827_0 [INFO] Application startup complete
+20260719_212827_0 [WARN] Low memory detected
+20260719_212827_0 [ERROR] Database connection failure
+20260719_212827_0 [INFO] Test message number 1
+20260719_212827_0 [WARN] Test message number 4
+20260719_212827_0 [INFO] Test message number 5
+20260719_212827_0 [ERROR] Test message number 6
+20260719_212827_0 [INFO] Test message number 7
