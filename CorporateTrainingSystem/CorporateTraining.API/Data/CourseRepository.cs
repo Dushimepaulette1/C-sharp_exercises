@@ -49,7 +49,7 @@ public static class CourseRepository
     {
         return courses.FirstOrDefault(c => c.Id == id);
     }
-    public static RemoveCourse(TrainingCourse course)
+    public static bool RemoveCourse(TrainingCourse course)
     {
         return courses.Remove(course);
     }
