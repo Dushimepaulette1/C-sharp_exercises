@@ -11,12 +11,14 @@ public class CoursesController : ControllerBase
 public IActionResult GetCourses()
 {
     var courses = CourseRepository.GetAllCourses();
-
     return Ok(courses);
 }
-[HttpGet("{id:int}")]
+[HttpGet("{id}")]
 public IActionResult GetCourse(int id ){
-  var course = CourseRepository.GetAllCourses().FirstOrDefault(c => c.Id == id);
+  var course = CourseRepository.GetCourseById(id);
+  if(course == null){
+    return NotFound();
+  }
   return Ok(course);
 }
 [HttpPost]
@@ -30,8 +32,7 @@ public IActionResult CreateCourse(TrainingCourse newCourse)
   [HttpPut("{id}")]
 public IActionResult UpdateCourse(int id, TrainingCourse updatedCourse)
 {
-  var allCourses = CourseRepository.GetAllCourses();
-  var courseToUpdate = allCourses.FirstOrDefault(c => c.Id == id);
+  var courseToUpdate = CourseRepository.GetCourseById(id); 
   if(courseToUpdate == null){
     return NotFound("Course with the id provided was not provided");
   }
@@ -47,12 +48,11 @@ public IActionResult UpdateCourse(int id, TrainingCourse updatedCourse)
 [HttpDelete("{id}")]
 public IActionResult DeleteCourse(int id)
 {
-  var allCourses = CourseRepository.GetAllCourses();
-  var courseToDelete = allCourses.FirstOrDefault(c => c.Id == id);
+  var courseToDelete = CourseRepository.GetCourseById(id);
   if (courseToDelete == null){
     return NotFound("The course with ID doesnot exist");
   }
-  allCourses.Remove(courseToDelete);
+  CourseRepository.RemoveCourse(courseToDelete);
   return NoContent(); 
   }
 
