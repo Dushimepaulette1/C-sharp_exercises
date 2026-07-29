@@ -36,12 +36,12 @@ public IActionResult UpdateCourse(int id, TrainingCourse updatedCourse)
     return NotFound("Course with the id provided was not provided");
   }
     courseToUpdate.Id = updatedCourse.Id;
-    courseToUpdate.Title = updateCourse.Title;
-    courseToUpdate.Description = updateCourse.Description;
-    courseToUpdate.Duration = updateCourse.Duration;
-    courseToUpdate.Instructor = updateCourse.Instructor;
-    courseToUpdate.MaxCapacity = updateCourse.MaxCapacity;
-    courseToUpdate.Prerequisites = updateCourse.Prerequisites;
+    courseToUpdate.Title = updatedCourse.Title;
+    courseToUpdate.Description = updatedCourse.Description;
+    courseToUpdate.Duration = updatedCourse.Duration;
+    courseToUpdate.Instructor = updatedCourse.Instructor;
+    courseToUpdate.MaxCapacity = updatedCourse.MaxCapacity;
+    courseToUpdate.Prerequisites = updatedCourse.Prerequisites;
    return Ok(courseToUpdate);
 
 }
