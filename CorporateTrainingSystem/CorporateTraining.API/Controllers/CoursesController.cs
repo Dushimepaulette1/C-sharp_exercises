@@ -35,7 +35,6 @@ public IActionResult UpdateCourse(int id, TrainingCourse updatedCourse)
   if(courseToUpdate == null){
     return NotFound("Course with the id provided was not provided");
   }
-    courseToUpdate.Id = updatedCourse.Id;
     courseToUpdate.Title = updatedCourse.Title;
     courseToUpdate.Description = updatedCourse.Description;
     courseToUpdate.Duration = updatedCourse.Duration;
