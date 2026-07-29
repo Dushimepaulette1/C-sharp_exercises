@@ -44,5 +44,16 @@ public IActionResult UpdateCourse(int id, TrainingCourse updatedCourse)
    return Ok(courseToUpdate);
 
 }
+[HttpDelete("{id}")]
+public IActionResult DeleteCourse(int id)
+{
+  var allCourses = CourseRepository.GetAllCourses();
+  var courseToDelete = allCourses.FirstOrDefault(c => c.Id == id);
+  if (courseToDelete == null){
+    return NotFound("The course with ID doesnot exist");
+  }
+  allCourses.Remove(courseToDelete);
+  return NoContent(); 
+  }
 
 }
