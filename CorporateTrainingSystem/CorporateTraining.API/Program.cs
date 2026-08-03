@@ -21,6 +21,7 @@ app.UseCors("ReactPolicy");
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
+    app.UseDeveloperExceptionPage();
 }
 
 app.UseHttpsRedirection();
