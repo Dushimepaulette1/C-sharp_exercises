@@ -36,6 +36,42 @@ public IActionResult GetCourse(int id)
     }
     return Ok(course);
 }
+[HttpPut("{id}")]
+public IActionResult UpdateCourse(int id, TrainingCourse updatedCourse)
+{
+    var course = _context.Courses.FirstOrDefault(c => c.Id == id);
 
+    if(course == null)
+    {
+        return NotFound();
+    }
+
+    course.Title = updatedCourse.Title;
+    course.Description = updatedCourse.Description;
+    course.Duration = updatedCourse.Duration;
+    course.Instructor = updatedCourse.Instructor;
+    course.MaxCapacity = updatedCourse.MaxCapacity;
+    course.Prerequisites = updatedCourse.Prerequisites;
+
+    _context.SaveChanges();
+
+    return Ok(course);
+}
+[HttpDelete("{id}")]
+public IActionResult DeleteCourse(int id)
+{
+    var course = _context.Courses.FirstOrDefault(c => c.Id == id);
+
+    if(course == null)
+    {
+        return NotFound();
+    }
+
+    _context.Courses.Remove(course);
+
+    _context.SaveChanges();
+
+    return NoContent();
+}
 
 }
