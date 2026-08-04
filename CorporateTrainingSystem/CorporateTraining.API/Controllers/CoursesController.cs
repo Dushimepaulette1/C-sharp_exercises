@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using CorporateTraining.API.Services;
 using CorporateTraining.API.Models;
 using CorporateTraining.API.Data;
 namespace CorporateTraining.API.Controllers;
@@ -19,38 +18,24 @@ public IActionResult GetCourses()
    var courses = _context.Courses.ToList();
     return Ok(courses);
 }
-[HttpGet("{id}")]
-public IActionResult GetCourse(int id ){
-  var course = CourseService.GetCourseById(id);
-  if(course == null){
-    return NotFound();
-  }
-  return Ok(course);
-}
 [HttpPost]
-public IActionResult CreateCourse(TrainingCourse newCourse)
+public IActionResult CreateCourse(TrainingCourse course)
 {
-  var createdCourse = CourseService.CreateCourse(newCourse);
-  return Ok(createdCourse);
-  }
-  [HttpPut("{id}")]
-public IActionResult UpdateCourse(int id, TrainingCourse updatedCourse)
-{
-  var courseToUpdate = CourseService.UpdateCourse(id, updatedCourse);
-  if(courseToUpdate == null){
-    return NotFound("Course with the id provided was not provided");
-  }
-   return Ok(courseToUpdate);
-
+_context.Courses.Add(course);
+_context.SaveChanges();
+return Ok(course);
 }
-[HttpDelete("{id}")]
-public IActionResult DeleteCourse(int id)
+[HttpGet("{id}")]
+public IActionResult GetCourse(int id)
 {
-  var deleted = CourseService.DeleteCourse(id);
-  if (!deleted){
-    return NotFound("The course with ID doesnot exist");
-  }
-  return NoContent();
-  }
+    var course = _context.Courses.FirstOrDefault(c => c.Id == id);
+
+    if(course == null)
+    {
+        return NotFound();
+    }
+    return Ok(course);
+}
+
 
 }
