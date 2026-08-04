@@ -1,16 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 using CorporateTraining.API.Services;
 using CorporateTraining.API.Models;
+using CorporateTraining.API.Data;
 namespace CorporateTraining.API.Controllers;
 
 [ApiController]
 [Route("courses")]
 public class CoursesController : ControllerBase
-{
+{ 
+  private readonly TrainingContext _context;
+  public CoursesController(TrainingContext context)
+  {
+    _context = context;
+  }
   [HttpGet]
 public IActionResult GetCourses()
 {
-    var courses = CourseService.GetAllCourses();
+   var courses = _context.Courses.ToList();
     return Ok(courses);
 }
 [HttpGet("{id}")]

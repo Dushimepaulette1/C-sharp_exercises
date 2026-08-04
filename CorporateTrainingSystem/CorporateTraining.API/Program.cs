@@ -1,4 +1,10 @@
+using CorporateTraining.API.Data;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Design;
 var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddDbContext<TrainingContext>(options =>
+    options.UseSqlServer(
+        builder.Configuration.GetConnectionString("TrainingContext")));
 
 // Add services to the container.
 builder.Services.AddControllers();
@@ -13,6 +19,7 @@ builder.Services.AddCors(options =>
               .AllowAnyMethod();
     });
 });
+
 
 var app = builder.Build();
 app.UseCors("ReactPolicy");
