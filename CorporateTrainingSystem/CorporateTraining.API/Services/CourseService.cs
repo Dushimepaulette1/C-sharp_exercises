@@ -1,54 +1,59 @@
-// using CorporateTraining.API.Data;
-// using CorporateTraining.API.Models;
+public class CourseService
+{
+    private readonly TrainingContext _context;
 
-// namespace CorporateTraining.API.Services;
+    public CourseService(TrainingContext context)
+    {
+        _context = context;
+    }
 
-// public static class CourseService
-// {
-//     public static List<TrainingCourse> GetAllCourses()
-//     {
-//         return CourseRepository.GetAllCourses();
-//     }
+    public List<TrainingCourse> GetAllCourses()
+    {
+        return _context.Courses.ToList();
+    }
 
-//     public static TrainingCourse? GetCourseById(int id)
-//     {
-//         return CourseRepository.GetCourseById(id);
-//     }
+    public TrainingCourse? GetCourseById(int id)
+    {
+        return _context.Courses.FirstOrDefault(c => c.Id == id);
+    }
 
-//     public static TrainingCourse CreateCourse(TrainingCourse newCourse)
-//     {
-//         int nextId = (CourseRepository.GetAllCourses().Max(c => (int?)c.Id) ?? 0) + 1;
-//         newCourse.Id = nextId;
-//         CourseRepository.GetAllCourses().Add(newCourse);
-//         return newCourse;
-//     }
+    public TrainingCourse CreateCourse(TrainingCourse course)
+    {
+        _context.Courses.Add(course);
+        _context.SaveChanges();
 
-//     public static TrainingCourse? UpdateCourse(int id, TrainingCourse updatedCourse)
-//     {
-//         var courseToUpdate = CourseRepository.GetCourseById(id);
-//         if (courseToUpdate == null)
-//         {
-//             return null;
-//         }
+        return course;
+    }
 
-//         courseToUpdate.Title = updatedCourse.Title;
-//         courseToUpdate.Description = updatedCourse.Description;
-//         courseToUpdate.Duration = updatedCourse.Duration;
-//         courseToUpdate.Instructor = updatedCourse.Instructor;
-//         courseToUpdate.MaxCapacity = updatedCourse.MaxCapacity;
-//         courseToUpdate.Prerequisites = updatedCourse.Prerequisites;
+    public bool UpdateCourse(int id, TrainingCourse updatedCourse)
+    {
+        var course = _context.Courses.FirstOrDefault(c => c.Id == id);
 
-//         return courseToUpdate;
-//     }
+        if (course == null)
+            return false;
 
-//     public static bool DeleteCourse(int id)
-//     {
-//         var courseToDelete = CourseRepository.GetCourseById(id);
-//         if (courseToDelete == null)
-//         {
-//             return false;
-//         }
+        course.Title = updatedCourse.Title;
+        course.Description = updatedCourse.Description;
+        course.Duration = updatedCourse.Duration;
+        course.Instructor = updatedCourse.Instructor;
+        course.MaxCapacity = updatedCourse.MaxCapacity;
+        course.Prerequisites = updatedCourse.Prerequisites;
 
-//         return CourseRepository.RemoveCourse(courseToDelete);
-//     }
-// }
+        _context.SaveChanges();
+
+        return true;
+    }
+
+    public bool DeleteCourse(int id)
+    {
+        var course = _context.Courses.FirstOrDefault(c => c.Id == id);
+
+        if (course == null)
+            return false;
+
+        _context.Courses.Remove(course);
+        _context.SaveChanges();
+
+        return true;
+    }
+}

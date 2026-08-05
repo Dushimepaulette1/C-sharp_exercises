@@ -15,8 +15,7 @@ public class CoursesController : ControllerBase
   [HttpGet]
 public IActionResult GetCourses()
 {
-   var courses = _context.Courses.ToList();
-    return Ok(courses);
+    return Ok(_courseService.GetAllCourses());
 }
 [HttpPost]
 public IActionResult CreateCourse(TrainingCourse course)
@@ -60,16 +59,10 @@ public IActionResult UpdateCourse(int id, TrainingCourse updatedCourse)
 [HttpDelete("{id}")]
 public IActionResult DeleteCourse(int id)
 {
-    var course = _context.Courses.FirstOrDefault(c => c.Id == id);
+  bool deleted = _courseService.DeleteCourse(id);
 
-    if(course == null)
-    {
+    if (!deleted)
         return NotFound();
-    }
-
-    _context.Courses.Remove(course);
-
-    _context.SaveChanges();
 
     return NoContent();
 }
