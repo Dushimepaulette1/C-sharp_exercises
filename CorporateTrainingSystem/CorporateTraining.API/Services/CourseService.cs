@@ -7,41 +7,95 @@ public class CourseService
         _context = context;
     }
 
-    public List<TrainingCourse> GetAllCourses()
+    public List<CourseDto> GetAllCourses()
     {
-        return _context.Courses.ToList();
+        var courses = _context.Courses.ToList();
+        return courses.Select(course => new CourseDto
+    {
+        Id = course.Id,
+        Title = course.Title,
+        Description = course.Description,
+        Duration = course.Duration,
+        Instructor = course.Instructor,
+        MaxCapacity = course.MaxCapacity,
+        Prerequisites = course.Prerequisites
+
+    }).ToList();
     }
 
-    public TrainingCourse? GetCourseById(int id)
+
+    public CourseDto? GetCourseById(int id)
     {
-        return _context.Courses.FirstOrDefault(c => c.Id == id);
+       var course = _context.Courses.FirstOrDefault(c => c.Id == id);
+       if (course == null){
+        return null;
+       }
+       return new CourseDto
+       {
+        Id = course.Id,
+        Title = course.Title,
+        Description = course.Description,
+        Duration = course.Duration,
+        Instructor = course.Instructor,
+        MaxCapacity = course.MaxCapacity,
+        Prerequisites = course.Prerequisites
+       };
     }
 
-    public TrainingCourse CreateCourse(TrainingCourse course)
+    public CourseDto CreateCourse(CreateCourseDto dto)
     {
+        var course = new TrainingCourse
+    {
+        Title = dto.Title,
+        Description = dto.Description,
+        Duration = dto.Duration,
+        Instructor = dto.Instructor,
+        MaxCapacity = dto.MaxCapacity,
+        Prerequisites = dto.Prerequisites
+    };
         _context.Courses.Add(course);
         _context.SaveChanges();
 
-        return course;
+        return new CourseDto
+    {
+        Id = course.Id,
+        Title = course.Title,
+        Description = course.Description,
+        Duration = course.Duration,
+        Instructor = course.Instructor,
+        MaxCapacity = course.MaxCapacity,
+        Prerequisites = course.Prerequisites
+    };
     }
 
-    public bool UpdateCourse(int id, TrainingCourse updatedCourse)
+    public CourseDto? UpdateCourse(int id, CreateCourseDto dto)
     {
         var course = _context.Courses.FirstOrDefault(c => c.Id == id);
 
         if (course == null)
-            return false;
+        {
+            return  null;
+        }
 
-        course.Title = updatedCourse.Title;
-        course.Description = updatedCourse.Description;
-        course.Duration = updatedCourse.Duration;
-        course.Instructor = updatedCourse.Instructor;
-        course.MaxCapacity = updatedCourse.MaxCapacity;
-        course.Prerequisites = updatedCourse.Prerequisites;
+        course.Title = dto.Title;
+        course.Description = dto.Description;
+        course.Duration = dto.Duration;
+        course.Instructor = dto.Instructor;
+        course.MaxCapacity = dto.MaxCapacity;
+        course.Prerequisites = dto.Prerequisites;
 
         _context.SaveChanges();
 
-        return true;
+        return new CourseDto
+    {
+        Id = course.Id,
+        Title = course.Title,
+        Description = course.Description,
+        Duration = course.Duration,
+        Instructor = course.Instructor,
+        MaxCapacity = course.MaxCapacity,
+        Prerequisites = course.Prerequisites
+    };
     }
 
     public bool DeleteCourse(int id)

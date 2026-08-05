@@ -5,29 +5,29 @@ namespace CorporateTraining.API.Controllers;
 
 [ApiController]
 [Route("courses")]
-public class CoursesController : ControllerBase
+private readonly CourseService _courseService;
+public class CoursesController: controllerBase
 { 
-  private readonly TrainingContext _context;
-  public CoursesController(TrainingContext context)
+  public CoursesController(CourseService courseService)
   {
-    _context = context;
+    _courseService = courseService;
   }
   [HttpGet]
 public IActionResult GetCourses()
 {
-    return Ok(_courseService.GetAllCourses());
+    var courses = _courseService.GetAllCourses();
+    return Ok(courses);
 }
 [HttpPost]
-public IActionResult CreateCourse(TrainingCourse course)
+public IActionResult CreateCourse(CreateCourseDto dto)
 {
-_context.Courses.Add(course);
-_context.SaveChanges();
+var course =  _courseService.CreateCourse(dto);;
 return Ok(course);
 }
 [HttpGet("{id}")]
 public IActionResult GetCourse(int id)
 {
-    var course = _context.Courses.FirstOrDefault(c => c.Id == id);
+    var course = _courseService.GetCourseById(id);
 
     if(course == null)
     {
@@ -36,30 +36,20 @@ public IActionResult GetCourse(int id)
     return Ok(course);
 }
 [HttpPut("{id}")]
-public IActionResult UpdateCourse(int id, TrainingCourse updatedCourse)
+public IActionResult UpdateCourse(int id, CreateCourseDto dto)
 {
-    var course = _context.Courses.FirstOrDefault(c => c.Id == id);
+    var updatedCourse =  _courseService.UpdateCourse(id,dto);
 
-    if(course == null)
+    if(updatedCourse == null)
     {
         return NotFound();
     }
-
-    course.Title = updatedCourse.Title;
-    course.Description = updatedCourse.Description;
-    course.Duration = updatedCourse.Duration;
-    course.Instructor = updatedCourse.Instructor;
-    course.MaxCapacity = updatedCourse.MaxCapacity;
-    course.Prerequisites = updatedCourse.Prerequisites;
-
-    _context.SaveChanges();
-
-    return Ok(course);
+    return Ok(updatedCourse);
 }
 [HttpDelete("{id}")]
 public IActionResult DeleteCourse(int id)
 {
-  bool deleted = _courseService.DeleteCourse(id);
+   var deleted = _courseService.DeleteCourse(id);
 
     if (!deleted)
         return NotFound();

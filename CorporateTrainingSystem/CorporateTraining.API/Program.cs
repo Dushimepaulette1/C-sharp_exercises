@@ -5,6 +5,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<TrainingContext>(options =>
     options.UseSqlServer(
         builder.Configuration.GetConnectionString("TrainingContext")));
+        builder.Services.AddScoped<CourseService>();
 
 // Add services to the container.
 builder.Services.AddControllers();
