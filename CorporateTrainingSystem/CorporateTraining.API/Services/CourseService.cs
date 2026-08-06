@@ -1,3 +1,7 @@
+using CorporateTraining.API.Data;
+using CorporateTraining.API.DTOs;
+using CorporateTraining.API.Mappers;
+
 public class CourseService
 {
     private readonly TrainingContext _context;
@@ -10,17 +14,7 @@ public class CourseService
     public List<CourseDto> GetAllCourses()
     {
         var courses = _context.Courses.ToList();
-        return courses.Select(course => new CourseDto
-    {
-        Id = course.Id,
-        Title = course.Title,
-        Description = course.Description,
-        Duration = course.Duration,
-        Instructor = course.Instructor,
-        MaxCapacity = course.MaxCapacity,
-        Prerequisites = course.Prerequisites
-
-    }).ToList();
+        return courses.Select(CourseMapper.ToDto).ToList();
     }
 
 
@@ -30,45 +24,19 @@ public class CourseService
        if (course == null){
         return null;
        }
-       return new CourseDto
-       {
-        Id = course.Id,
-        Title = course.Title,
-        Description = course.Description,
-        Duration = course.Duration,
-        Instructor = course.Instructor,
-        MaxCapacity = course.MaxCapacity,
-        Prerequisites = course.Prerequisites
-       };
+       return CourseMapper.ToDto(course);
     }
 
     public CourseDto CreateCourse(CreateCourseDto dto)
     {
-        var course = new TrainingCourse
-    {
-        Title = dto.Title,
-        Description = dto.Description,
-        Duration = dto.Duration,
-        Instructor = dto.Instructor,
-        MaxCapacity = dto.MaxCapacity,
-        Prerequisites = dto.Prerequisites
-    };
+        var course = CourseMapper.ToEntity(dto);
         _context.Courses.Add(course);
         _context.SaveChanges();
 
-        return new CourseDto
-    {
-        Id = course.Id,
-        Title = course.Title,
-        Description = course.Description,
-        Duration = course.Duration,
-        Instructor = course.Instructor,
-        MaxCapacity = course.MaxCapacity,
-        Prerequisites = course.Prerequisites
-    };
+        return CourseMapper.ToDto(course);
     }
 
-    public CourseDto? UpdateCourse(int id, CreateCourseDto dto)
+    public CourseDto? UpdateCourse(int id, UpdateCourseDto dto)
     {
         var course = _context.Courses.FirstOrDefault(c => c.Id == id);
 
@@ -79,23 +47,14 @@ public class CourseService
 
         course.Title = dto.Title;
         course.Description = dto.Description;
-        course.Duration = dto.Duration;
+        course.Duration = dto.Duration ?? course.Duration;
         course.Instructor = dto.Instructor;
-        course.MaxCapacity = dto.MaxCapacity;
+        course.MaxCapacity = dto.MaxCapacity ?? course.MaxCapacity;
         course.Prerequisites = dto.Prerequisites;
 
         _context.SaveChanges();
 
-        return new CourseDto
-    {
-        Id = course.Id,
-        Title = course.Title,
-        Description = course.Description,
-        Duration = course.Duration,
-        Instructor = course.Instructor,
-        MaxCapacity = course.MaxCapacity,
-        Prerequisites = course.Prerequisites
-    };
+        return CourseMapper.ToDto(course);
     }
 
     public bool DeleteCourse(int id)

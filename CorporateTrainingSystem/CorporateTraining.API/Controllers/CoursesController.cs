@@ -1,13 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
-using CorporateTraining.API.Models;
-using CorporateTraining.API.Data;
+using CorporateTraining.API.DTOs;
+using CorporateTraining.API.Services;
+
 namespace CorporateTraining.API.Controllers;
 
 [ApiController]
 [Route("courses")]
-private readonly CourseService _courseService;
-public class CoursesController: controllerBase
-{ 
+public class CoursesController : ControllerBase
+{
+  private readonly CourseService _courseService;
+
   public CoursesController(CourseService courseService)
   {
     _courseService = courseService;
@@ -21,7 +23,7 @@ public IActionResult GetCourses()
 [HttpPost]
 public IActionResult CreateCourse(CreateCourseDto dto)
 {
-var course =  _courseService.CreateCourse(dto);;
+var course =  _courseService.CreateCourse(dto);
 return Ok(course);
 }
 [HttpGet("{id}")]
@@ -36,7 +38,7 @@ public IActionResult GetCourse(int id)
     return Ok(course);
 }
 [HttpPut("{id}")]
-public IActionResult UpdateCourse(int id, CreateCourseDto dto)
+public IActionResult UpdateCourse(int id, UpdateCourseDto dto)
 {
     var updatedCourse =  _courseService.UpdateCourse(id,dto);
 

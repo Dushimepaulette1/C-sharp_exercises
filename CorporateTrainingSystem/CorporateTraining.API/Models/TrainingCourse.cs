@@ -1,3 +1,5 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace CorporateTraining.API.Models;
 
 public class TrainingCourse
