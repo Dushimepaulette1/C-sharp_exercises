@@ -1,0 +1,2 @@
+20260719_212827_432 [ERROR] Test message number 6
+20260719_212827_9413 [INFO] Test message number 7

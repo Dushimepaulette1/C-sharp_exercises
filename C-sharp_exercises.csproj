@@ -13,6 +13,17 @@
     <Compile Remove="References/**/*.cs" />
     <Compile Remove="strings/**/*.cs" />
     <Compile Remove="Enums/**/*.cs" />
+    <Compile Remove="Generics/**/*.cs" />
+    <Compile Remove="Exceptions/**/*.cs" />
+    <Compile Remove="NullableTypes/**/*.cs" />
+    <Compile Remove="Lambdas/**/*.cs" />
+    <Compile Remove="LINQ/**/*.cs" />
+    <Compile Remove="Delegates/**/*.cs" />
+    <Compile Remove="Events/**/*.cs" />
+    <Compile Remove="Asynchronous/**/*.cs" />
+    <Compile Remove="Files/**/*.cs" />
+    <Compile Remove="iterators/**/*.cs" />
+    <Compile Remove="ImposterGame/**/*.cs" />
   </ItemGroup>
 
 </Project>
