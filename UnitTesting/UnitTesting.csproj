@@ -20,4 +20,11 @@
     <Using Include="NUnit.Framework" />
   </ItemGroup>
 
+  <ItemGroup>
+    <!-- TestingCourseSolns has its own standalone projects (Loans / Loans.Tests) -
+         keep this project from also trying to compile their files. -->
+    <Compile Remove="TestingCourseSolns/**/*.cs" />
+    <None Remove="TestingCourseSolns/**/*.cs" />
+  </ItemGroup>
+
 </Project>
