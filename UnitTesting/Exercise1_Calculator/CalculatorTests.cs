@@ -11,17 +11,20 @@ public class CalculatorTests
         _calculator = new Calculator();
     }
 
-    [Test]
-    public void Add_TwoPositiveNumbers_ReturnsSum()
+    [TestCase(2, 3, 5)]
+    [TestCase(-2, -3, -5)]
+    [TestCase(0, 5, 5)]
+    public void Add_VariousInputs_ReturnsExpectedSum(int a, int b, int expected)
     {
-        var result = _calculator.Add(2, 3);
+        var result = _calculator.Add(a, b);
 
-        Assert.That(result, Is.EqualTo(5));
+        Assert.That(result, Is.EqualTo(expected));
     }
 
-    [Test]
-    [TestCase(10,2,8)]
-    public void Subtract_TwoNumbers_ReturnsDifference(int num1, int num2, int expectedResult)
+    [TestCase(10, 2, 8)]
+    [TestCase(2, 10, -8)]
+    [TestCase(0, 5, -5)]
+    public void Subtract_VariousInputs_ReturnsExpectedDifference(int num1, int num2, int expectedResult)
     {
         var result = _calculator.Subtract(num1, num2);
 
@@ -44,21 +47,22 @@ public class CalculatorTests
         Assert.Throws<DivideByZeroException>(() => _calculator.Divide(10, 0));
     }
 
-    [Test]
-    [TestCase(10,10, 1)]
-    public void Divide_TwoNumbers_ReturnsQuotient(int x, int y, int expectedQuotient)
+// Simplifying TestCase expected values
+    [TestCase(10, 10, ExpectedResult=1)]
+    [TestCase(10, 4,  ExpectedResult=2.5)]
+    [TestCase(-10, 2,  ExpectedResult=-5)]
+    public double Divide_TwoNumbers_ReturnsQuotient(int x, int y)
     {
-        // Assert.Ignore("TODO: implement this test.");
-        var result = _calculator.Divide(x,y);
-        Assert.That(result, Is.EqualTo(expectedQuotient));
+        return _calculator.Divide(x, y);
+        // Assert.That(result, Is.EqualTo(expectedQuotient));
     }
 
-    [Test]
-    [TestCase(10)]
-    public void IsEven_VariousNumbers_ReturnsExpectedResult(int num)
+    [TestCase(10, true)]
+    [TestCase(7, false)]
+    [TestCase(0, true)]
+    public void IsEven_VariousNumbers_ReturnsExpectedResult(int num, bool expected)
     {
-        // Assert.Ignore("TODO: implement this test.");
         var result = _calculator.IsEven(num);
-        Assert.That(result, Is.True);
+        Assert.That(result, Is.EqualTo(expected));
     }
 }
