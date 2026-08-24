@@ -45,14 +45,20 @@ public class CalculatorTests
     }
 
     [Test]
-    public void Divide_TwoNumbers_ReturnsQuotient()
+    [TestCase(10,10, 1)]
+    public void Divide_TwoNumbers_ReturnsQuotient(int x, int y, int expectedQuotient)
     {
-        Assert.Ignore("TODO: implement this test.");
+        // Assert.Ignore("TODO: implement this test.");
+        var result = _calculator.Divide(x,y);
+        Assert.That(result, Is.EqualTo(expectedQuotient));
     }
 
     [Test]
-    public void IsEven_VariousNumbers_ReturnsExpectedResult()
+    [TestCase(10)]
+    public void IsEven_VariousNumbers_ReturnsExpectedResult(int num)
     {
-        Assert.Ignore("TODO: implement this test.");
+        // Assert.Ignore("TODO: implement this test.");
+        var result = _calculator.IsEven(num);
+        Assert.That(result, Is.True);
     }
 }
