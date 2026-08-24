@@ -20,11 +20,12 @@ public class CalculatorTests
     }
 
     [Test]
-    public void Subtract_TwoNumbers_ReturnsDifference()
+    [TestCase(10,2,8)]
+    public void Subtract_TwoNumbers_ReturnsDifference(int num1, int num2, int expectedResult)
     {
-        var result = _calculator.Subtract(10, 4);
+        var result = _calculator.Subtract(num1, num2);
 
-        Assert.That(result, Is.EqualTo(6));
+        Assert.That(result, Is.EqualTo(expectedResult));
     }
 
     [TestCase(2, 3, 6)]
