@@ -24,6 +24,7 @@
     <Compile Remove="Files/**/*.cs" />
     <Compile Remove="iterators/**/*.cs" />
     <Compile Remove="ImposterGame/**/*.cs" />
+    <Compile Remove="UnitTesting/**/*.cs" />
   </ItemGroup>
 
 </Project>
