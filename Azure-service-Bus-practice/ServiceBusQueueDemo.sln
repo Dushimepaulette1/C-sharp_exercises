@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.31903.59
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sender", "Sender\Sender.csproj", "{698BDFA0-2A78-498B-8959-560B47D97F0F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Receiver", "Receiver\Receiver.csproj", "{2E70F8F0-CB47-459E-B6E4-4A0B94C4940F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatConsole", "ChatConsole\ChatConsole.csproj", "{3BCF0892-2CED-471B-8C93-43EDD1AC49D3}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{698BDFA0-2A78-498B-8959-560B47D97F0F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{698BDFA0-2A78-498B-8959-560B47D97F0F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{698BDFA0-2A78-498B-8959-560B47D97F0F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{698BDFA0-2A78-498B-8959-560B47D97F0F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2E70F8F0-CB47-459E-B6E4-4A0B94C4940F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2E70F8F0-CB47-459E-B6E4-4A0B94C4940F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2E70F8F0-CB47-459E-B6E4-4A0B94C4940F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2E70F8F0-CB47-459E-B6E4-4A0B94C4940F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BCF0892-2CED-471B-8C93-43EDD1AC49D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BCF0892-2CED-471B-8C93-43EDD1AC49D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BCF0892-2CED-471B-8C93-43EDD1AC49D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BCF0892-2CED-471B-8C93-43EDD1AC49D3}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
