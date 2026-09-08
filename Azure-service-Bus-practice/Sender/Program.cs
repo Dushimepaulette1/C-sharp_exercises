@@ -14,12 +14,28 @@ var client = new ServiceBusClient(connectionString);
 var sender = client.CreateSender(QueueName);
 // TODO: Create a message batch
 Console.WriteLine("Sending messages............");
-foreach(var character in Sentence)
+var firstEmployee = new Employee
 {
-  var message = new ServiceBusMessage(character.ToString());
-  await sender.SendMessageAsync(message);
-  Console.WriteLine($" Sent : {character}");
-}
+    Id = 1,
+    Name = "John Doe",
+    Department = "IT"
+};
+var msgInJson = new ServiceBusMessage(System.Text.Json.JsonSerializer.Serialize(firstEmployee));
+await sender.SendMessageAsync(msgInJson);
+
+// foreach(var character in Sentence)
+// {
+//   var message = new ServiceBusMessage(character.ToString());
+//   await sender.SendMessageAsync(message);
+//   Console.WriteLine($" Sent : {character}");
+// }
 // Close the sender
 await sender.CloseAsync();
 Console.WriteLine("Sent messages.");
+
+class Employee
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public string Department { get; set; }
+}
