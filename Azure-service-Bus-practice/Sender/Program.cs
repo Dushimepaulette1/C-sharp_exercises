@@ -21,7 +21,7 @@ var firstEmployee = new Employee
     Department = "IT"
 };
 var msgInJson = new ServiceBusMessage(System.Text.Json.JsonSerializer.Serialize(firstEmployee));
-await sender.SendMessageAsync(msgInJson);
+// await sender.SendMessageAsync(msgInJson);
 
 // foreach(var character in Sentence)
 // {
