@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>Receiver</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Sub-folders here are their own standalone exercise projects (each with its own .csproj) -->
+    <!-- and should not be swept into this project's build -->
+    <Compile Remove="peek-and-Receive-mode/**/*.cs" />
+    <Compile Remove="deadletter/**/*.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Official Azure SDK package for talking to Service Bus (queues, topics/subscriptions) -->
+    <PackageReference Include="Azure.Messaging.ServiceBus" Version="7.18.2" />
+  </ItemGroup>
+
+</Project>
